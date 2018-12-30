@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import com.androidapps.dagger2flavours.FlavourApplication
 import com.androidapps.dagger2flavours.injection.component.*
 import com.androidapps.dagger2flavours.injection.module.ActivityModule
+import com.androidapps.dagger2flavours.injection.module.AppModule
 import com.androidapps.dagger2flavours.injection.module.FragmentModule
 import com.androidapps.dagger2flavours.injection.module.IndiaAppModule
 
@@ -16,7 +17,7 @@ class DaggerComponentManager {
             appComponent = DaggerIndiaAppComponent.builder()
                 .indiaAppModule(IndiaAppModule(application))
                 .appModule(
-                    AppModule(application)
+                    AppModule(application))
                         .build()
         }
 

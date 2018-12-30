@@ -23,6 +23,6 @@ class FlavorFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        tvText.text = arguments?.getInt(ITEM_ID).toString()
+        tvText.text = arguments?.getInt(ITEM_ID).toString() + BuildConfig.FLAVOR
     }
 }
