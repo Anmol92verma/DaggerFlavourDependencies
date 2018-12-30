@@ -8,9 +8,10 @@ import android.preference.PreferenceManager
 import com.androidapps.dagger2flavours.injection.qualifiers.ApplicationContext
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 
 @Module
-class AppModule(private val application: Application) {
+open class AppModule(private val application: Application) {
 
     @Provides
     @ApplicationContext
@@ -24,6 +25,7 @@ class AppModule(private val application: Application) {
     }
 
     @Provides
+    @Singleton
     internal fun provideSharedPreferences(): SharedPreferences {
         return PreferenceManager.getDefaultSharedPreferences(application)
     }

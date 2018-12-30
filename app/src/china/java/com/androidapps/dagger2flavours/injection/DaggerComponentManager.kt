@@ -4,19 +4,23 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import com.androidapps.dagger2flavours.FlavourApplication
 import com.androidapps.dagger2flavours.injection.component.ActivityComponent
-import com.androidapps.dagger2flavours.injection.component.ApplicationComponent
-import com.androidapps.dagger2flavours.injection.component.DaggerApplicationComponent
+import com.androidapps.dagger2flavours.injection.component.ChinaAppComponent
+import com.androidapps.dagger2flavours.injection.component.DaggerChinaAppComponent
 import com.androidapps.dagger2flavours.injection.component.FragmentComponent
 import com.androidapps.dagger2flavours.injection.module.ActivityModule
 import com.androidapps.dagger2flavours.injection.module.AppModule
+import com.androidapps.dagger2flavours.injection.module.ChinaAppModule
 import com.androidapps.dagger2flavours.injection.module.FragmentModule
 
 class DaggerComponentManager {
 
     companion object {
-        var appComponent: ApplicationComponent? = null
+        var appComponent: ChinaAppComponent? = null
         fun initialize(application: FlavourApplication) {
-            appComponent = DaggerApplicationComponent.builder().appModule(AppModule(application)).build()
+            appComponent = DaggerChinaAppComponent.builder()
+                .chinaAppModule(ChinaAppModule(application))
+                .appModule(AppModule(application)
+            ).build()
         }
 
         fun getActivityComponent(activity: AppCompatActivity): ActivityComponent {

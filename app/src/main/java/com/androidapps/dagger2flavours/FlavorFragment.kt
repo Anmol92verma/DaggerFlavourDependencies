@@ -6,8 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.androidapps.dagger2flavours.databinding.FlavorLayoutBinding
+import kotlinx.android.synthetic.main.flavor_layout.*
 
 class FlavorFragment : Fragment() {
+
+    companion object {
+        const val ITEM_ID = "ITEM_ID"
+    }
 
     private lateinit var binding: FlavorLayoutBinding
 
@@ -18,5 +23,6 @@ class FlavorFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        tvText.text = arguments?.getInt(ITEM_ID).toString()
     }
 }
