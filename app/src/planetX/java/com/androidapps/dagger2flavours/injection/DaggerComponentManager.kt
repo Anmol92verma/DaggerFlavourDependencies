@@ -4,18 +4,15 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import com.androidapps.dagger2flavours.FlavourApplication
 import com.androidapps.dagger2flavours.injection.component.*
-import com.androidapps.dagger2flavours.injection.module.ActivityModule
-import com.androidapps.dagger2flavours.injection.module.AppModule
-import com.androidapps.dagger2flavours.injection.module.FragmentModule
-import com.androidapps.dagger2flavours.injection.module.PlanetXAppModule
+import com.androidapps.dagger2flavours.injection.module.*
 
 class DaggerComponentManager {
 
     companion object {
         var appComponent: PlanetXAppComponent? = null
         fun initialize(application: FlavourApplication) {
-            appComponent = DaggerIndiaAppComponent.builder()
-                .indiaAppModule(PlanetXAppModule(application))
+            appComponent = DaggerPlanetXAppComponent.builder()
+                .planetXAppModule(PlanetXAppModule(application))
                 .appModule(
                     AppModule(application))
                         .build()

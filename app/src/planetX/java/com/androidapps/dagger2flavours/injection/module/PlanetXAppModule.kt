@@ -8,7 +8,7 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class IndiaAppModule(val application: FlavourApplication) {
+class PlanetXAppModule(val application: FlavourApplication) {
     @Provides
     fun provideFunctionality(sharedPreferences: SharedPreferences): Functionality {
         return FunctionalityplanetX(application, sharedPreferences)
