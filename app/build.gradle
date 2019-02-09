@@ -57,9 +57,6 @@ dependencies {
     implementation deps.appcompatv7
     implementation deps.design
     implementation deps.vectorDrawable
-    // Data Binding
-    kapt deps.databinding
-
     // Dagger 2
     implementation deps.dagger
     kapt deps.daggercompiler
