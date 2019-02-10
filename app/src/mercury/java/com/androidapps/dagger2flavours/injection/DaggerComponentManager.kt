@@ -14,8 +14,8 @@ class DaggerComponentManager {
     companion object {
         var appComponent: PlanetXAppComponent? = null
         fun initialize(application: FlavourApplication) {
-            appComponent = DaggerIndiaAppComponent.builder()
-                .indiaAppModule(PlanetXAppModule(application))
+            appComponent = DaggerMercuryAppComponent.builder()
+                .MercuryAppModule(PlanetXAppModule(application))
                 .appModule(
                     AppModule(application))
                         .build()

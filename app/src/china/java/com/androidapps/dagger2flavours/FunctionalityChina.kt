@@ -3,14 +3,17 @@ package com.androidapps.dagger2flavours
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
+import com.androidapps.dagger2flavours.injection.qualifiers.ApplicationContext
 
 class FunctionalityChina(
-    private val context: Context,
-    private val sharedPreferences: SharedPreferences
+    @ApplicationContext private val context: Context,
+    private val sharedPreferences: SharedPreferences,
+    private val chinaDataProvider: ChinaDataProvider
 ) : Functionality {
 
     override fun init() {
         Log.d(this.javaClass.name, "init${BuildConfig.FLAVOR}")
+        chinaDataProvider.initSdk(context)
     }
 
     override fun prepare() {

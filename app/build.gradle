@@ -28,9 +28,9 @@ android {
     flavorDimensions "version"
 
     productFlavors {
-        india {
+        mercury {
             dimension "version"
-            applicationIdSuffix ".india"
+            applicationIdSuffix ".Mercury"
         }
         china {
             dimension "version"

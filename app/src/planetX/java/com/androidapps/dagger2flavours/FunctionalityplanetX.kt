@@ -3,14 +3,18 @@ package com.androidapps.dagger2flavours
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
+import com.androidapps.dagger2flavours.injection.qualifiers.ApplicationContext
 
 class FunctionalityplanetX(
-    private val context: Context,
+    @ApplicationContext private val context: Context,
+    private val planetXDataProvider: PlanetXDataProvider,
     private val sharedPreferences: SharedPreferences
 ) : Functionality {
 
+
     override fun init() {
         Log.d(this.javaClass.name, "init${BuildConfig.FLAVOR}")
+        planetXDataProvider.initSdk(context)
     }
 
     override fun prepare() {
